@@ -1,1 +1,0 @@
-enum RouteNames { homepage, detailPage }
