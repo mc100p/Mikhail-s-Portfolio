@@ -33,7 +33,7 @@ class DetailsPage extends StatelessWidget {
                   itemList.imgUrl.map((imgUrl) {
                     return ClipRRect(
                       borderRadius: BorderRadius.circular(12),
-                      child: Image.network(
+                      child: Image.asset(
                         imgUrl,
                         fit: BoxFit.contain,
                         width: double.infinity,

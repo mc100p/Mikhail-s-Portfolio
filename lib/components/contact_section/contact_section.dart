@@ -19,6 +19,15 @@ class ContactSection extends StatelessWidget {
     }
   }
 
+  void _launchWebsite(String url) async {
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri); // This is the correct function to launch the URL
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,6 +48,35 @@ class ContactSection extends StatelessWidget {
                 onPressed: () => launchEmail("campbellmikhail26@gmail.com"),
                 child: Text(
                   "campbellmikhail26@gmail.com",
+                  style: TextStyle(color: Colors.blue),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Text(
+                'Instagram where I post regualarly: ',
+                style: TextStyle(fontSize: 16),
+              ),
+              TextButton(
+                onPressed:
+                    () =>
+                        _launchWebsite("https://www.instagram.com/mcbflutter/"),
+                child: Text("Mcbflutter", style: TextStyle(color: Colors.blue)),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Text('LinkedIn: ', style: TextStyle(fontSize: 16)),
+              TextButton(
+                onPressed:
+                    () => _launchWebsite(
+                      "https://www.linkedin.com/in/mikhail-campbell-5bab97169/",
+                    ),
+                child: Text(
+                  "Mikhail Campbell",
                   style: TextStyle(color: Colors.blue),
                 ),
               ),

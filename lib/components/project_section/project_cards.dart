@@ -39,7 +39,7 @@ class ProjectCard extends StatelessWidget {
             child: Center(
               child:
                   project.imgUrl.isNotEmpty
-                      ? Image.network(
+                      ? Image.asset(
                         project.imgUrl.first,
                         fit: BoxFit.cover,
                         errorBuilder:
